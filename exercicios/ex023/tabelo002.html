@@ -8,16 +8,40 @@
         body {
           font-family: Arial, Helvetica, sans-serif;
         }
+        h1 {
+            text-align: center;
+        }
 
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
-        thead, tfoot {
+
+        caption {
             background-color: grey;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        thead, tfoot {
+            background-color: rgb(59, 59, 59);
             color: white;
             font-weight: bold;
         }
+        thead > tr > th {
+            position: sticky;
+            top: 0px;
+            background-color:  rgb(65, 65, 65);
+        }
+
+        tbody > tr:nth-child(odd) {
+            background-color: white;
+        }
+        tbody > tr:nth-child(even) {
+            background-color: grey;
+        }
+
         td, th {
             border: 1px solid black;
             padding: 10px;
@@ -28,10 +52,12 @@
     </style>
 </head>
 <body>
+    <h1>Uso de tabelas grandes</h1>
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
-          <th>Estado</th>
-          <th>População</th>
+          <th scope="col">Estado</th>
+          <th scope="col" style="width: 50px;">População</th>
         </thead>
 
         <tbody>
@@ -180,5 +206,5 @@
            </tr>
         </tfoot>
     </table>
-</body>
+ </body>
 </html>
